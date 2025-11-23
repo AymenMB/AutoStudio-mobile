@@ -1,15 +1,57 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# dependencies
+# ========================
+# Dependencies
+# ========================
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
+# ========================
 # Expo
+# ========================
 .expo/
+.expo-shared/
 dist/
 web-build/
 expo-env.d.ts
+*.jsbundle
 
-# Native
+# ========================
+# Native Build Artifacts
+# ========================
+# iOS
+/ios/
+*.ipa
+*.dSYM.zip
+*.dSYM
+DerivedData
+*.xcuserstate
+ios/Pods/
+ios/.xcode.env.local
+
+# Android
+/android/
+*.apk
+*.aab
+*.keystore
+!debug.keystore
+.gradle
+local.properties
+*.hprof
+.cxx/
+
+# ========================
+# Native Files
+# ========================
 .kotlin/
 *.orig.*
 *.jks
@@ -17,25 +59,155 @@ expo-env.d.ts
 *.p12
 *.key
 *.mobileprovision
+*.certSigningRequest
+google-services.json
+GoogleService-Info.plist
 
-# Metro
+# ========================
+# Metro Bundler
+# ========================
 .metro-health-check*
+.metro-cache/
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
+# ========================
+# Environment & Config
+# ========================
+.env
+.env.*
+!.env.example
+.envrc
 
+# API Keys (Safety Net)
+*secret*
+*SECRET*
+*apikey*
+*APIKEY*
+
+# ========================
+# IDE & Editors
+# ========================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA / WebStorm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ========================
+# Operating System Files
+# ========================
 # macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 *.pem
 
-# local env files
-.env*.local
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
 
-# typescript
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ========================
+# Testing & Coverage
+# ========================
+coverage/
+*.lcov
+.nyc_output
+.jest/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# ========================
+# Logs & Debug
+# ========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+
+# ========================
+# TypeScript
+# ========================
 *.tsbuildinfo
+.tscache/
+*.d.ts.map
 
-# generated native folders
-/ios
-/android
+# ========================
+# Build & Temp Files
+# ========================
+build/
+tmp/
+temp/
+.cache/
+.temp/
+*.tmp
+
+# ========================
+# Package Manager Locks
+# ========================
+# Uncomment if using yarn/pnpm exclusively
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ========================
+# Misc
+# ========================
+.turbo
+.vercel
+.netlify
+.firebase
